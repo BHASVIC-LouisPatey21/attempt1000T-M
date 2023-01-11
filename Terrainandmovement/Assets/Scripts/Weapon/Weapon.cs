@@ -16,6 +16,7 @@ private bool isReloading = false;
 [Header("Game Feel")]
 [SerializeField] ParticleSystem muzzleFlash;
 [SerializeField] AudioSource ShootSound;
+public AudioSource ReloadSound;
 
 [Header("Raycast")]
 [SerializeField] float weaponRange;
@@ -32,7 +33,7 @@ float thresholdTime;
 
 void Start()
 {   
-       //recoil Script attempt 10000
+
 }
 void Awake()
 {
@@ -96,8 +97,10 @@ IEnumerator Reload()
 {
     isReloading = true;
     animator.SetBool("Reloading", true);
+    ReloadSound.enabled = true;
     yield return new WaitForSeconds(reloadTime);
     animator.SetBool("Reloading", false);
+    ReloadSound.enabled = false;
     ammoCount = 30;
     isReloading = false;
 }
@@ -160,6 +163,13 @@ private void GunSound()
 
 
 
+private void SoundReload()
+{
+    ReloadSound = GetComponent<AudioSource>();
+    ReloadSound.Play();
+
+
+}
 
 
 
