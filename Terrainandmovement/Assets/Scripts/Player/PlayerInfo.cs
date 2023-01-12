@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class PlayerInfo : MonoBehaviour
 {
-    private int _health;
+    
+    public static int Health;
     void Start()
     {
-        _health = 10;
+        Health = 10;
     }
 
-    public void Hurt(int damage)
+    public void Hurt()
     {
-        _health -=damage;
-        Debug.Log("Health: " + _health);
+        Health -=1;
+
+    }
+    void Update()
+    {
+        Debug.Log("Health: " + Health);
     }
     
 

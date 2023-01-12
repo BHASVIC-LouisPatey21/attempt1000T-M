@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Collision;
+
 
 public class DetectScript : MonoBehaviour
 {
@@ -13,7 +13,7 @@ public class DetectScript : MonoBehaviour
     public Transform shootPoint;
 
     public float shootSpeed = 100f;
-    public float timeToShoot = 1.3f;
+    private float timeToShoot = 3f;
     float originalTime;
     void Start()
     {
@@ -55,15 +55,10 @@ public class DetectScript : MonoBehaviour
             target = other.gameObject;
             
         }
-
+        
 }
-    void OnCollisionEnter (collision other)
-    {
-        if(other.gameObject.tag.Equals("Player")==true)
-        {
-            Destroy(gameObject);
-        }
-    }
+   
+    
 
 private void ShootPlayer()
 {

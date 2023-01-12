@@ -33,12 +33,12 @@ public class GenerateEnemies : MonoBehaviour
     IEnumerator EnemySpawn()
     {
         yield return new WaitForSeconds (1.0f);
-        while (enemyCount < 5 )
+        while (enemyCount < 3 )
         {
             xPos = Random.Range(-30,31);
             zPos = Random.Range(30,14);
 
-            Instantiate(theEnemy, new Vector3(xPos,1,zPos),Quaternion.identity);
+            Instantiate(theEnemy, new Vector3(xPos,1.2f,zPos),Quaternion.identity);
             yield return new WaitForSeconds(0.1f);
             enemyCount +=1;
              
@@ -47,12 +47,12 @@ public class GenerateEnemies : MonoBehaviour
     IEnumerator EnemySpawn1()
     {
         yield return new WaitForSeconds (1.0f);;
-        while (enemyCount1 < 5 )
+        while (enemyCount1 < 3 )
         {
             xPos1 = Random.Range(30,15);
             zPos1 = Random.Range(30,-30);
 
-            Instantiate(theEnemy, new Vector3(xPos1,1,zPos1),Quaternion.identity);
+            Instantiate(theEnemy, new Vector3(xPos1,1.2f,zPos1),Quaternion.identity);
             yield return new WaitForSeconds(0.1f);
             enemyCount1 +=1;
         }
@@ -60,12 +60,12 @@ public class GenerateEnemies : MonoBehaviour
     IEnumerator EnemySpawn2()
     {
         yield return new WaitForSeconds (1.0f);
-        while (enemyCount2 < 5 )
+        while (enemyCount2 < 3 )
         {
             xPos2 = Random.Range(30,-30);
             zPos2 = Random.Range(-30,-15);
 
-            Instantiate(theEnemy, new Vector3(xPos2,1,zPos2),Quaternion.identity);
+            Instantiate(theEnemy, new Vector3(xPos2,1.2f,zPos2),Quaternion.identity);
             yield return new WaitForSeconds(0.1f);
             enemyCount2 +=1;
         }
@@ -73,12 +73,12 @@ public class GenerateEnemies : MonoBehaviour
     IEnumerator EnemySpawn3()
     {
         yield return new WaitForSeconds (1.0f);
-        while (enemyCount3 < 5 )
+        while (enemyCount3 < 3 )
         {
             xPos3 = Random.Range(-30,-15);
             zPos3 = Random.Range(-30,30);
 
-            Instantiate(theEnemy, new Vector3(xPos3,1,zPos3),Quaternion.identity);
+            Instantiate(theEnemy, new Vector3(xPos3,1.2f,zPos3),Quaternion.identity);
             yield return new WaitForSeconds(0.1f);
             enemyCount3 +=1;
         }
