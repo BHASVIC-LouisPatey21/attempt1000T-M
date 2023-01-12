@@ -21,7 +21,7 @@ public AudioSource ReloadSound;
 [Header("Raycast")]
 [SerializeField] float weaponRange;
 [SerializeField] float fireRate ;
-
+public static int Score;
 
 
 public Animator animator;
@@ -53,6 +53,7 @@ void Update()
     if(Input.GetMouseButton(0) && canShoot && GetAmmoCount() > 0 )
 {
     Shoot();
+
 }
 
 
@@ -137,6 +138,7 @@ if (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out h
 if(hit.transform.tag == "enemy")
     {
         Destroy(hit.collider.gameObject);
+        Score++;
     }
 }
 }

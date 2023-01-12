@@ -18,18 +18,21 @@ public class GenerateEnemies : MonoBehaviour
     public int enemyCount1;
     public int enemyCount2;
     public int enemyCount3;
+    public int Score;
+    public int CurrentEnemies;
     void Start()
     {
         
         StartCoroutine(EnemySpawn());
-        StartCoroutine(EnemySpawn1());
-        StartCoroutine(EnemySpawn2());
-        StartCoroutine(EnemySpawn3());
+                StartCoroutine(EnemySpawn1());
+                StartCoroutine(EnemySpawn2());
+                StartCoroutine(EnemySpawn3());
+        
     }
     
     IEnumerator EnemySpawn()
     {
-        yield return new WaitForSeconds (6.0f);
+        yield return new WaitForSeconds (1.0f);
         while (enemyCount < 5 )
         {
             xPos = Random.Range(-30,31);
@@ -38,11 +41,12 @@ public class GenerateEnemies : MonoBehaviour
             Instantiate(theEnemy, new Vector3(xPos,1,zPos),Quaternion.identity);
             yield return new WaitForSeconds(0.1f);
             enemyCount +=1;
+             
         }
     }
     IEnumerator EnemySpawn1()
     {
-        yield return new WaitForSeconds (6.0f);;
+        yield return new WaitForSeconds (1.0f);;
         while (enemyCount1 < 5 )
         {
             xPos1 = Random.Range(30,15);
@@ -55,7 +59,7 @@ public class GenerateEnemies : MonoBehaviour
     }
     IEnumerator EnemySpawn2()
     {
-        yield return new WaitForSeconds (6.0f);
+        yield return new WaitForSeconds (1.0f);
         while (enemyCount2 < 5 )
         {
             xPos2 = Random.Range(30,-30);
@@ -68,7 +72,7 @@ public class GenerateEnemies : MonoBehaviour
     }
     IEnumerator EnemySpawn3()
     {
-        yield return new WaitForSeconds (6.0f);
+        yield return new WaitForSeconds (1.0f);
         while (enemyCount3 < 5 )
         {
             xPos3 = Random.Range(-30,-15);
@@ -79,4 +83,10 @@ public class GenerateEnemies : MonoBehaviour
             enemyCount3 +=1;
         }
     }
+
+void Update()
+{
+    CurrentEnemies = enemyCount + enemyCount1 + enemyCount2 + enemyCount3 - Weapon.Score;
+    
+}
 }
