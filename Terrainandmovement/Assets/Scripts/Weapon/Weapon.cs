@@ -53,7 +53,7 @@ void Update()
     if(Input.GetMouseButton(0) && canShoot && GetAmmoCount() > 0 )
 {
     Shoot();
-
+    
 }
 
 
@@ -65,12 +65,6 @@ ammoDisplay.text = ammoCount.ToString();
 if (isReloading) {
     return;
     }
-
-
-
-
-
-
 if (thresholdTime <= Time.time)
 {
         canShoot = true;
@@ -138,6 +132,7 @@ if (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out h
 if(hit.transform.tag == "enemy")
     {
         Destroy(hit.collider.gameObject);
+        GenerateEnemies.TempScore++;
         Score++;
     }
 }

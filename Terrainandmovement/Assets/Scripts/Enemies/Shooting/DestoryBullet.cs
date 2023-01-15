@@ -1,22 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DestoryBullet : MonoBehaviour
 {
-    
-    private void OnCollisionEnter(Collision collision){
-    
-
-
+    public AudioSource TakeDamage;
+      
+    public void OnCollisionEnter(Collision collision){
     if(collision.gameObject.tag == "Player")
     {
-        PlayerInfo.Health = PlayerInfo.Health-1;
+        PlayerInfo.Health--;
+        TakeDamage.Play();
     }
-
-
-
-
     Destroy(this.gameObject);
     }
+    
 }
