@@ -5,15 +5,19 @@ using UnityEngine.UI;
 
 public class DestoryBullet : MonoBehaviour
 {
-    public AudioSource TakeDamage;
+
+    void Start()
+    {
+
+    }
       
-    public void OnCollisionEnter(Collision collision){
+    void OnCollisionEnter(Collision collision){
     if(collision.gameObject.tag == "Player")
     {
         PlayerInfo.Health--;
-        TakeDamage.Play();
+        HurtSound.PlaySoundHurt = true;
+        
     }
     Destroy(this.gameObject);
-    }
-    
+}
 }

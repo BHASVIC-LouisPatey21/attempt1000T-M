@@ -789,6 +789,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1481554557}
   m_CullTransparentMesh: 1
+--- !u!1 &1764241442 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1511760903355789714, guid: ec184ce2f0db7c740b315b8eb73003f1, type: 3}
+  m_PrefabInstance: {fileID: 1946780724}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1767467203
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,6 +878,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1767467204}
     m_Modifications:
+    - target: {fileID: 1511760903119850144, guid: ec184ce2f0db7c740b315b8eb73003f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1946780726}
+    - target: {fileID: 1511760903119850144, guid: ec184ce2f0db7c740b315b8eb73003f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511760903119850144, guid: ec184ce2f0db7c740b315b8eb73003f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EasyDif, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1511760903119850159, guid: ec184ce2f0db7c740b315b8eb73003f1, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 436
@@ -1009,10 +1026,23 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -1018
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1511760903355789716, guid: ec184ce2f0db7c740b315b8eb73003f1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ec184ce2f0db7c740b315b8eb73003f1, type: 3}
 --- !u!224 &1946780725 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1511760903355789715, guid: ec184ce2f0db7c740b315b8eb73003f1, type: 3}
   m_PrefabInstance: {fileID: 1946780724}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1946780726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764241442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06d4daf149f792d42868ed9cce6b9d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

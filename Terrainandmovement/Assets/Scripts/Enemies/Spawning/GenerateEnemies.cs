@@ -28,6 +28,9 @@ public class GenerateEnemies : MonoBehaviour
     bool EnemyOn = false;
     public static bool DispLevel;
     public Text LevelText; 
+    public static bool EasyMode = false;
+    public static bool MediumMode = false;
+    public static bool HardMode = false;
     void Start()
     {
         Level = 1;   
@@ -45,19 +48,24 @@ public class GenerateEnemies : MonoBehaviour
 
 void Update()
 {
+    if (EasyMode)
+    {
+        AmountToSpawn = 2*Level;
+    }
+    if (MediumMode)
+    {
+        AmountToSpawn = 2*(Level+1);
 
+    }
+    if (HardMode)
+    {
+        AmountToSpawn = 3*(Level+2);
+    }
+   
+    Debug.Log(AmountToSpawn);
     LevelText.text = Level.ToString();
     CurrentEnemies = AmountToSpawn*4 - TempScore;
-    
-
-
-    AmountToSpawn = 2*(Level+1); 
-
-
-    Debug.Log(Level);
-
-    
-    
+         
     if(EnemyOn && CurrentEnemies == 0)
     {
         EnemyOn = false;
